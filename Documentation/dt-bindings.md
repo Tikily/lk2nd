@@ -186,6 +186,26 @@ If the property is not set the default hint will be shown:
   Volume keys to navigate.
   Power key to select.
 
+### SD MMC card slot
+
+If your device has the external SD card mapped to a different slot number than
+the usual, you can specify the slot that lk2nd will check for an SD card.
+
+For example, if your device has the external SD card mapped to slot 3, you can
+add the following property:
+
+```
+	lk2nd,sd-mmc = <&sdhc3>;
+```
+
+The available values are `<&sdhc2>` and `<&sdhc3>`.
+
+This setting is only applicable to the following platforms:
+- msm8974
+
+Note: For platforms where this is applicable, this property **must** be set
+in the device's lk2nd DTS for SD card boot to work.
+
 ## Additional drivers
 
 lk2nd provides a set of optional nodes, following a simple driver
